@@ -22,12 +22,9 @@
 <body>
     <div id="app">
         <v-app>
-            <v-alert
-            :value="true"
-            type="success"
-            >
-                You are loged in.
-            </v-alert>
+            
+            <app-home></app-home>
+
         </v-app>
     </div>
     

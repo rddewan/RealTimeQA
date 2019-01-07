@@ -21,7 +21,7 @@ Vue.use(Vuetify)
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('AppHome', require('./components/AppHome.vue'));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -31,7 +31,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import router from './Router/router.js';
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router
 });
