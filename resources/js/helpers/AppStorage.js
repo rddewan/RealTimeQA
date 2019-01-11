@@ -1,6 +1,6 @@
 class AppStorage {
 
-    storeToken(token) {
+   storeToken(token) {
         localStorage.setItem('token', token);
 
     }
@@ -23,12 +23,12 @@ class AppStorage {
 
     // get token from storage
     getToken(){
-        localStorage.getItem('token') ;
+        return localStorage.getItem('token') ;
     }
 
     //get user from storage
     getUser(){
-        localStorage.getItem('user');
+        return localStorage.getItem('user');
     }
 
 }

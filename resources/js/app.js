@@ -11,11 +11,13 @@ window.Vue = require('vue');
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 
-Vue.use(Vuetify)
+Vue.use(Vuetify);
 
-//user class ffrom helper
-import User from './helper/User'
-window.oUser = User;
+//user class from helper
+import User from './helpers/User'
+
+window.User = User;
+console.log(User.name());
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -39,4 +41,4 @@ import router from './Router/router.js';
 const app = new Vue({
     el: '#app',
     router
-})
+});

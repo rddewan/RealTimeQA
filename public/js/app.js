@@ -25499,7 +25499,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetify__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuetify__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Router_router_js__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_User__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Router_router_js__ = __webpack_require__(64);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -25515,6 +25516,11 @@ window.Vue = __webpack_require__(2);
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuetify___default.a);
 
+//user class from helper
+
+
+window.User = __WEBPACK_IMPORTED_MODULE_2__helpers_User__["a" /* default */];
+console.log(__WEBPACK_IMPORTED_MODULE_2__helpers_User__["a" /* default */].name());
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -25537,7 +25543,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('AppHome', __webpack_requi
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app',
-  router: __WEBPACK_IMPORTED_MODULE_2__Router_router_js__["a" /* default */]
+  router: __WEBPACK_IMPORTED_MODULE_3__Router_router_js__["a" /* default */]
 });
 
 /***/ }),
@@ -72392,7 +72398,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -72403,15 +72409,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -72463,26 +72460,9 @@ var render = function() {
                 _vm._v("Get connected with us on social networks!")
               ]),
               _vm._v(" "),
-              _c("v-spacer"),
-              _vm._v(" "),
-              _vm._l(_vm.icons, function(icon) {
-                return _c(
-                  "v-btn",
-                  {
-                    key: icon,
-                    staticClass: "mx-3",
-                    attrs: { dark: "", icon: "" }
-                  },
-                  [
-                    _c("v-icon", { attrs: { size: "24px" } }, [
-                      _vm._v(_vm._s(icon))
-                    ])
-                  ],
-                  1
-                )
-              })
+              _c("v-spacer")
             ],
-            2
+            1
           ),
           _vm._v(" "),
           _c(
@@ -72545,7 +72525,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -72556,22 +72536,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_User__ = __webpack_require__(71);
 //
 //
 //
@@ -72603,11 +72568,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             form: {
-                emai: null,
+                email: null,
                 password: null
             }
         };
@@ -72615,11 +72581,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         login: function login() {
-            axios.post('api/auth/login', this.form).then(function (res) {
-                return console.log(res.data);
-            }).catch(function (error) {
-                return console.log(error.response.data);
-            });
+            __WEBPACK_IMPORTED_MODULE_0__helpers_User__["a" /* default */].login(this.form);
         }
     }
 
@@ -72658,66 +72620,7 @@ var render = function() {
                         [
                           _c("v-toolbar-title", [_vm._v("Login")]),
                           _vm._v(" "),
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c(
-                            "v-tooltip",
-                            { attrs: { bottom: "" } },
-                            [
-                              _c(
-                                "v-btn",
-                                {
-                                  attrs: {
-                                    slot: "activator",
-                                    href: _vm.source,
-                                    icon: "",
-                                    large: "",
-                                    target: "_blank"
-                                  },
-                                  slot: "activator"
-                                },
-                                [
-                                  _c("v-icon", { attrs: { large: "" } }, [
-                                    _vm._v("code")
-                                  ])
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("Source")])
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-tooltip",
-                            { attrs: { right: "" } },
-                            [
-                              _c(
-                                "v-btn",
-                                {
-                                  attrs: {
-                                    slot: "activator",
-                                    icon: "",
-                                    large: "",
-                                    href:
-                                      "https://codepen.io/johnjleider/pen/wyYVVj",
-                                    target: "_blank"
-                                  },
-                                  slot: "activator"
-                                },
-                                [
-                                  _c("v-icon", { attrs: { large: "" } }, [
-                                    _vm._v("mdi-codepen")
-                                  ])
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("Codepen")])
-                            ],
-                            1
-                          )
+                          _c("v-spacer")
                         ],
                         1
                       ),
@@ -75514,6 +75417,199 @@ if (inBrowser && window.Vue) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Token__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__AppStorage__ = __webpack_require__(73);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+var User = function () {
+    function User() {
+        _classCallCheck(this, User);
+    }
+
+    _createClass(User, [{
+        key: 'login',
+        value: function login(data) {
+            var _this = this;
+
+            axios.post('api/auth/login', data).then(function (res) {
+                return _this.responseAfterLogin(res);
+            }).catch(function (error) {
+                return console.log(error.response.data);
+            });
+        }
+    }, {
+        key: 'responseAfterLogin',
+        value: function responseAfterLogin(res) {
+
+            var access_token = res.data.access_token;
+            var username = res.data.user;
+
+            if (__WEBPACK_IMPORTED_MODULE_0__Token__["a" /* default */].isValid(access_token)) {
+                __WEBPACK_IMPORTED_MODULE_1__AppStorage__["a" /* default */].store(username, access_token);
+            }
+        }
+    }, {
+        key: 'hasToken',
+        value: function hasToken() {
+
+            var storeToken = __WEBPACK_IMPORTED_MODULE_1__AppStorage__["a" /* default */].getToken();
+            if (storeToken) {
+                return __WEBPACK_IMPORTED_MODULE_0__Token__["a" /* default */].isValid(storeToken) ? true : false;
+            }
+            return false;
+        }
+    }, {
+        key: 'loggedIn',
+        value: function loggedIn() {
+            return this.hasToken();
+        }
+    }, {
+        key: 'logout',
+        value: function logout() {
+            __WEBPACK_IMPORTED_MODULE_1__AppStorage__["a" /* default */].clear();
+        }
+    }, {
+        key: 'name',
+        value: function name() {
+            if (this.loggedIn()) {
+                return __WEBPACK_IMPORTED_MODULE_1__AppStorage__["a" /* default */].getUser();
+            }
+        }
+    }, {
+        key: 'id',
+        value: function id() {
+            if (this.loggedIn()) {
+                var payload = __WEBPACK_IMPORTED_MODULE_0__Token__["a" /* default */].payload(__WEBPACK_IMPORTED_MODULE_1__AppStorage__["a" /* default */].getToken());
+                return payload.sub;
+            }
+        }
+    }]);
+
+    return User;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (User = new User());
+
+/***/ }),
+/* 72 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Token = function () {
+    function Token() {
+        _classCallCheck(this, Token);
+    }
+
+    _createClass(Token, [{
+        key: "isValid",
+        value: function isValid(token) {
+            var payload = this.payload(token);
+
+            if (payload) {
+                console.log(payload);
+                return payload.iss === "http://127.0.0.1:8000/api/auth/login";
+            }
+
+            return false;
+        }
+    }, {
+        key: "payload",
+        value: function payload(token) {
+            var payload = token.split('.')[1];
+            return this.decode(payload);
+        }
+    }, {
+        key: "decode",
+        value: function decode(payload) {
+            return JSON.parse(atob(payload));
+        }
+    }]);
+
+    return Token;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (Token = new Token());
+
+/***/ }),
+/* 73 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var AppStorage = function () {
+    function AppStorage() {
+        _classCallCheck(this, AppStorage);
+    }
+
+    _createClass(AppStorage, [{
+        key: 'storeToken',
+        value: function storeToken(token) {
+            localStorage.setItem('token', token);
+        }
+    }, {
+        key: 'storeUser',
+        value: function storeUser(user) {
+            localStorage.setItem('user', user);
+        }
+    }, {
+        key: 'store',
+        value: function store(user, token) {
+            this.storeToken(token);
+            this.storeUser(user);
+        }
+
+        //this will clear user and token from local storage
+
+    }, {
+        key: 'clear',
+        value: function clear() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+        }
+
+        // get token from storage
+
+    }, {
+        key: 'getToken',
+        value: function getToken() {
+            return localStorage.getItem('token');
+        }
+
+        //get user from storage
+
+    }, {
+        key: 'getUser',
+        value: function getUser() {
+            return localStorage.getItem('user');
+        }
+    }]);
+
+    return AppStorage;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (AppStorage = new AppStorage());
 
 /***/ })
 /******/ ]);
